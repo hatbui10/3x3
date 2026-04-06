@@ -239,60 +239,63 @@
 
     // Hàm thực hiện hiệu ứng quay và gán kết quả
     function rollMatrix() {
-        // Phát âm thanh
         spinSound.currentTime = 0;
         spinSound.play().catch(() => {});
 
-        // Logic khống chế: Tạo mảng chứa tối đa 6A hoặc 6b
-        // Random số lượng A từ 3 đến 6 (Để b cũng tự động từ 3 đến 6)
-        const countA = Math.floor(Math.random() * 2) + 4; 
-        const countB = 9 - countA;
+        // --- LOGIC CỐ ĐỊNH THEO QUY TẮC MỚI ---
         
-        let finalResults = [];
-        for(let i=0; i<countA; i++) finalResults.push("A");
-        for(let i=0; i<countB; i++) finalResults.push("b");
+        // Nhóm 1 (Ô 1, 2, 3, 4): Luôn có đúng 2A và 2b
+        let group1 = ["A", "A", "b", "b"];
         
-        // Trộn vị trí
-        shuffleArray(finalResults);
+        // Nhóm 2 (Ô 5, 6, 7, 8, 9): Luôn có đúng 2A và 3b
+        let group2 = ["A", "A", "b", "b", "b"];
 
+        // Trộn ngẫu nhiên vị trí trong nội bộ từng nhóm để đảm bảo tính bất ngờ
+        shuffleArray(group1);
+        shuffleArray(group2);
+
+        // Kết hợp lại thành danh sách 9 ô theo thứ tự từ 1 đến 9
+        // Chỉ số 0-3 là của nhóm 1, chỉ số 4-8 là của nhóm 2
+        const finalResults = [...group1, ...group2];
+
+        // --- TIẾN HÀNH HIỆU ỨNG QUAY ---
         cellDisplays.forEach((item, index) => {
             let iterations = 0;
-            // Số lần nhảy chữ trước khi dừng
             const maxIterations = 20 + Math.floor(Math.random() * 10); 
 
-            // Thêm hiệu ứng quay cho ô
             item.container.classList.add("spinning");
-            // Reset màu chữ mặc định khi bắt đầu quay
             item.text.style.color = "rgba(255, 255, 255, 0.3)";
             item.text.style.textShadow = "none";
 
             const interval = setInterval(() => {
-                // Hiệu ứng nhảy chữ ngẫu nhiên lúc đang quay
+                // Trong lúc quay vẫn nhảy chữ A/b ngẫu nhiên để tạo hiệu ứng
                 item.text.textContent = Math.random() > 0.5 ? "A" : "b";
                 iterations++;
 
                 if (iterations >= maxIterations) {
                     clearInterval(interval);
-                    // Xóa hiệu ứng quay
                     item.container.classList.remove("spinning");
                     
-                    // Gán kết quả thực tế từ mảng đã khống chế
+                    // Gán kết quả cuối cùng theo mảng logic đã chia nhóm ở trên
                     const finalChar = finalResults[index];
                     item.text.textContent = finalChar;
                     
-                    // Đổi màu và hiệu ứng bóng đổ theo chữ cái cuối cùng
+                    // Hiển thị màu sắc neon cho kết quả
                     if(finalChar === "A") {
-                        item.text.style.color = "#00ffff"; // Xanh Cyan neon
+                        item.text.style.color = "#00ffff";
                         item.text.style.textShadow = "0 0 15px #00ffff, 0 0 25px #00ffff";
                     } else {
-                        item.text.style.color = "#ff00ff"; // Hồng neon
+                        item.text.style.color = "#ff00ff";
                         item.text.style.textShadow = "0 0 15px #ff00ff, 0 0 25px #ff00ff";
                     }
                 }
-            }, 50); // Tốc độ nhảy chữ (50ms)
+            }, 50);
         });
     }
-</script>
+    
+    
+    </script>
 
 </body>
 </html>
+
