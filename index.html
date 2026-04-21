@@ -1,317 +1,211 @@
 <!DOCTYPE html>
 <html lang="vi">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>12 yếu tố trong cuộc đời</title>
-<style>
-    body {
-        font-family: Arial, sans-serif;
-        background-image: url('https://img.tripi.vn/cdn-cgi/image/width=700,height=700/https://gcs.tripi.vn/public-tripi/tripi-feed/img/489700rAB/anh-mo-ta.png');
-    background-size: cover; /* Ảnh tự giãn đầy màn hình */
-    background-position: center; /* Canh giữa */
-    background-repeat: no-repeat; /* Không lặp lại */
-        margin: 20px;
-        padding: 20px;
-        border: 5px solid #2a7ae2;
-        border-radius: 20px;
-    }
-     h1 {
-    font-size: 60px;
-    color: #fff;
-    letter-spacing: 3px;
-    text-align: center;
-    text-transform: uppercase;
-    animation: glow 2s ease-in-out infinite alternate;
-  }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>12 yếu tố trong cuộc sống</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-image: url('https://img.tripi.vn/cdn-cgi/image/width=700,height=700/https://gcs.tripi.vn/public-tripi/tripi-feed/img/489700rAB/anh-mo-ta.png');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            background-repeat: no-repeat;
+            margin: 0;
+            padding: 40px 20px;
+        }
 
-  span {
-    display:inline-block;
-  animation:wave 2s ease-in-out infinite;
-  animation-delay:calc(var(--i) * 0.1s);
-  }
+        /* Container chính */
+        .container {
+            border: 5px solid #2a7ae2;
+            border-radius: 30px;
+            padding: 40px;
+            background-color: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(5px);
+        }
 
-  /* Tạo độ trễ pha cho từng chữ */
-  span:nth-child(1) { animation-delay: 0s; }
-  span:nth-child(2) { animation-delay: 0.1s; }
-  span:nth-child(3) { animation-delay: 0.2s; }
-  span:nth-child(4) { animation-delay: 0.3s; }
-  span:nth-child(5) { animation-delay: 0.4s; }
-  span:nth-child(6) { animation-delay: 0.5s; }
-  span:nth-child(7) { animation-delay: 0.6s; }
-  span:nth-child(8) { animation-delay: 0.7s; }
-  span:nth-child(9) { animation-delay: 0.8s; }
-  span:nth-child(10) { animation-delay: 0.9s; }
+        h1 {
+            font-size: 50px;
+            color: #fff;
+            letter-spacing: 2px;
+            text-align: center;
+            text-transform: uppercase;
+            margin-bottom: 50px;
+        }
 
-  /* Sóng sin */
-  @keyframes wave {
-    0%, 100% { transform: translateY(0); }
-    25% { transform: translateY(-15px); }
-    75% { transform: translateY(15px); }
-  }
+        h1 span {
+            display: inline-block;
+            animation: wave 2s ease-in-out infinite;
+            animation-delay: calc(var(--i) * 0.1s);
+        }
 
-  /* Hiệu ứng phát sáng */
-  @keyframes glow {
-    from {
-      text-shadow:
-        0 0 10px #fff,
-        0 0 20px #ff00de,
-        0 0 30px #ff00de,
-        0 0 40px #ff00de;
-    }
-    to {
-      text-shadow:
-        0 0 20px #00ffff,
-        0 0 40px #00ffff,
-        0 0 60px #00ffff,
-        0 0 80px #00ffff;
-    }
-  }
-    .grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
-        gap: 20px;
-       
-    }
-    .box {
-        background-color: #B0CE88;
-        border: 2px solid #2a7ae2;
-        border-radius: 10px;
-        padding: 20px;
-        box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-        transition: transform 0.2s, box-shadow 0.2s;
-    }
-    .box:hover {
-        transform: translateY(-5px);
-        box-shadow: 0 8px 12px rgba(0,0,0,0.2);
-    }
-    .title-line {
-        display: flex;
-        align-items: center;
-        margin-bottom: 10px;
-    }
-    .dot {
-        font-size: 30px;
-        font-weight: bold;
-        color: #2a7ae2;
-        margin-right: 10px;
-    }
-    .type-title {
-        font-weight: bold;
-        color: #2a7ae2;
-        font-size: 20px;
-    }
-    .content-line {
-        margin-left: 38px;
-        margin-bottom: 5px;
-        position: relative;
-    }
-    .content-line::before {
-        content: "•";
-        position: absolute;
-        left: -20px;
-        color: #2a7ae2;
-        font-weight: bold;
-    }
-</style>
+        @keyframes wave {
+            0%, 100% { transform: translateY(0); }
+            25% { transform: translateY(-10px); }
+            75% { transform: translateY(10px); }
+        }
+
+        h1 {
+            animation: glow 2s ease-in-out infinite alternate;
+        }
+
+        @keyframes glow {
+            from { text-shadow: 0 0 10px #fff, 0 0 20px #ff00de; }
+            to { text-shadow: 0 0 20px #00ffff, 0 0 40px #00ffff; }
+        }
+
+        /* Grid layout */
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 25px;
+        }
+
+        .box {
+            background-color: #B0CE88;
+            border: 2px solid #2a7ae2;
+            border-radius: 15px;
+            padding: 25px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+            transition: all 0.3s ease;
+        }
+
+        .box:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 20px rgba(0,0,0,0.3);
+        }
+
+        .title-line {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 15px;
+        }
+
+        .dot {
+            font-size: 28px;
+            font-weight: bold;
+            color: #2a7ae2;
+            margin-right: 12px;
+            line-height: 1;
+        }
+
+        .type-title {
+            font-weight: bold;
+            color: #2a7ae2;
+            font-size: 20px;
+            text-transform: uppercase;
+            line-height: 1.2;
+        }
+
+        /* CSS TRỌNG TÂM: Căn chỉnh dấu chấm thẳng hàng */
+        ul {
+            list-style-type: none; /* Tắt dấu chấm mặc định để tự tùy chỉnh */
+            padding-left: 40px; 
+            margin: 0;
+        }
+
+        li {
+            position: relative;
+            margin-bottom: 10px;
+            line-height: 1.6;
+            color: #1a1a1a;
+            font-size: 16px;
+        }
+
+        /* Tạo dấu chấm xanh thủ công để kiểm soát vị trí tuyệt đối */
+        li::before {
+            content: "•";
+            position: absolute;
+            left: -20px;
+            color: #2a7ae2;
+            font-weight: bold;
+            font-size: 20px;
+        }
+
+        /* Cấp bậc con (thụt vào thêm) */
+        ul ul {
+            padding-left: 25px;
+            margin-top: 5px;
+        }
+        
+        ul ul li::before {
+            content: "◦"; /* Dấu chấm rỗng cho cấp con */
+        }
+
+    </style>
 </head>
 <body>
-<h1 id="text"><span>1</span><span>2</span>&nbsp;<span>y</span><span>ế</span><span>u</span>&nbsp;<span>t</span><span>ố</span>&nbsp;<span>t</span><span>r</span><span>o</span><span>n</span><span>g</span>&nbsp;<span>c</span><span>u</span><span>ộ</span><span>c</span>&nbsp;<span>s</span><span>ố</span><span>n</span><span>g</span></h1>
 
-<div class="grid">
+<div class="container">
+    <h1 id="text">
+        <span>1</span><span>2</span>&nbsp;<span>Y</span><span>Ế</span><span>U</span>&nbsp;<span>T</span><span>Ố</span>&nbsp;<span>T</span><span>R</span><span>O</span><span>N</span><span>G</span>&nbsp;<span>C</span><span>U</span><span>Ộ</span><span>C</span>&nbsp;<span>S</span><span>Ố</span><span>N</span><span>G</span>
+    </h1>
 
-    <!-- 1 -->
-    <div class="box">
-        <div class="title-line">
-            <div class="dot">1.</div>
-           <div class="type-title">QUYỀN LỰC</div>
-    </div>
-         <div class="content-line">Quyền lực là khả năng sử dụng những thứ xung quanh theo ý muốn của mình.</div>
-         <div class="content-line"></div>
-         <div class="content-line"></div>
-         <div class="content-line"></div>
-         <div class="content-line"></div>
-         <div class="content-line"></div>
-         
-    </div>
-    <!-- 2 -->
-    <div class="box">
-        <div class="title-line">
-            <div class="dot">2.</div>
-             <div class="type-title">Dù người ta nghĩ gì, nói gì, làm gì thì cũng không nằm ngoài mấy trường hợp sau:</div>
-     </div>
-         <div class="content-line"></div>
-         <div class="content-line"></div>
-         <div class="content-line"></div>
-         <div class="content-line"></div>
-         <div class="content-line"></div>
-         <div class="content-line"></div>
-         
-    </div>
-
-    <!-- 3 -->
-    <div class="box">
-        <div class="title-line">
-            <div class="dot">3.</div>
-            <div class="type-title">Tại sao bạn lại chọn những điều này?</div>
-  </div>
-         <div class="content-line"></div>
-         <div class="content-line"></div>
-         <div class="content-line"></div>
-         <div class="content-line"></div>
-         <div class="content-line"></div>
-         <div class="content-line"></div>
-         
-    </div>
-
-    <!-- 4 -->
-    <div class="box">
-        <div class="title-line">
-            <div class="dot">4.</div>
-            <div class="type-title">Bạn sẽ làm gì nếu :</div>
-  </div>
-         <div class="content-line"></div>
-         <div class="content-line"></div>
-         <div class="content-line"></div>
-         <div class="content-line"></div>
-         <div class="content-line"></div>
-         <div class="content-line"></div>
-         
-    </div>
-
-    <!-- 5 -->
-    <div class="box">
-        <div class="title-line">
-            <div class="dot">5.</div>
-            <div class="type-title">Những lưu ý quan trọng:</div>
- </div>
-         <div class="content-line"></div>
-         <div class="content-line"></div>
-         <div class="content-line"></div>
-         <div class="content-line"></div>
-         <div class="content-line"></div>
-         <div class="content-line"></div>
-         
-    </div>
-
-    <!-- 6 -->
-    <div class="box">
-        <div class="title-line">
-            <div class="dot">6.</div>
-            <div class="type-title">Nhìn vào tương lai :</div>
-  </div>
-         <div class="content-line"></div>
-         <div class="content-line"></div>
-         <div class="content-line"></div>
-         <div class="content-line"></div>
-         <div class="content-line"></div>
-         <div class="content-line"></div>
-         
-    </div>
-
-    <!-- 7 -->
-    <div class="box">
-        <div class="title-line">
-            <div class="dot">7.</div>
-            <div class="type-title">Thực tế cuộc sống :</div>
+    <div class="grid">
+        <div class="box">
+            <div class="title-line">
+                <div class="dot">1.</div>
+                <div class="type-title">QUYỀN LỰC</div>
+            </div>
+            <ul>
+                <li>Quyền lực là khả năng sử dụng những thứ xung quanh theo ý muốn của mình.</li>
+                <li>Quyền lực =
+                    <ul>
+                        <li>Kiến thức từ cơ bản đến nâng cao </li>
+                        <li>Kỹ năng chuyên môn </li>
+                        <li>Kinh nghiệm thực chiến </li>
+                        <li>Thành tích đạt được</li>
+                    </ul>
+                </li>
+            </ul>
         </div>
-   
-         <div class="content-line"></div>
-         <div class="content-line"></div>
-         <div class="content-line"></div>
-         <div class="content-line"></div>
-         <div class="content-line"></div>
-         <div class="content-line"></div>
-         
-    </div>
 
-    <!-- 8 -->
-    <div class="box">
-        <div class="title-line">
-            <div class="dot">8.</div>
-            <div class="type-title">Và.....</div>
+        <div class="box">
+            <div class="title-line">
+                <div class="dot">2.</div>
+                <div class="type-title">Tâm lý hành vi</div>
+            </div>
+            <ul>
+                <li>Dù người ta nghĩ gì, nói gì, làm gì thì cũng không nằm ngoài các trường hợp sau...</li>
+                <li>Yếu tố tác động từ môi trường.</li>
+                <li>Hệ thống niềm tin cũ.</li>
+            </ul>
         </div>
-    
-         <div class="content-line"></div>
-         <div class="content-line"></div>
-         <div class="content-line"></div>
-         <div class="content-line"></div>
-         <div class="content-line"></div>
-         <div class="content-line"></div>
-         
-    </div>
 
-    <!-- 9 -->
-    <div class="box">
-        <div class="title-line">
-            <div class="dot">9.</div>
-            <div class="type-title">Làm người sẽ gặp những gì:</div>
+        <div class="box">
+            <div class="title-line">
+                <div class="dot">3.</div>
+                <div class="type-title">Lựa chọn</div>
+            </div>
+            <ul>
+                <li>Tại sao bạn lại chọn những điều này?</li>
+                <li>Giá trị cốt lõi cá nhân.</li>
+                <li>Mục tiêu dài hạn.</li>
+            </ul>
         </div>
- 
-         <div class="content-line"></div>
-         <div class="content-line"></div>
-         <div class="content-line"></div>
-         <div class="content-line"></div>
-         <div class="content-line"></div>
-         <div class="content-line"></div>
-         
-    </div>
 
-    <!-- 10 -->
-    <div class="box">
-        <div class="title-line">
-            <div class="dot">10.</div>
-            <div class="type-title">Bài học rút ra sau nhiều năm chiêm nghiệm thực tế :</div>
+        <div class="box">
+            <div class="title-line">
+                <div class="dot">4.</div>
+                <div class="type-title">Hành động</div>
+            </div>
+            <ul>
+                <li>Bạn sẽ làm gì nếu gặp thử thách?</li>
+                <li>Kế hoạch ứng phó rủi ro.</li>
+            </ul>
         </div>
- 
-         <div class="content-line"></div>
-         <div class="content-line"></div>
-         <div class="content-line"></div>
-         <div class="content-line"></div>
-         <div class="content-line"></div>
-         <div class="content-line"></div>
-         
-    </div>
 
-    <!-- 11 -->
-    <div class="box">
-        <div class="title-line">
-            <div class="dot">11.</div>
-            <div class="type-title">Cách cuộc sống vận hành</div>
-        </div>
- 
-         <div class="content-line"></div>
-         <div class="content-line"></div>
-         <div class="content-line"></div>
-         <div class="content-line"></div>
-         <div class="content-line"></div>
-         <div class="content-line"></div>
-         
     </div>
-    <!-- 12 -->
-    <div class="box">
-        <div class="title-line">
-            <div class="dot">12.</div>
-            <div class="type-title"> Sau tất cả :</div>
-        </div>
-  
-         <div class="content-line"></div>
-         <div class="content-line"></div>
-         <div class="content-line"></div>
-         <div class="content-line"></div>
-         <div class="content-line"></div>
-         <div class="content-line"></div>
-         
-    </div>
-
 </div>
+
 <script>
-    // Gán chỉ số cho từng span để tính delay
-    document.querySelectorAll('#text span').forEach((span, i) => {
-      span.style.setProperty('--i', i);
+    // Tự động gán index cho các chữ cái trong tiêu đề để chạy hiệu ứng sóng
+    const spans = document.querySelectorAll('#text span');
+    spans.forEach((span, i) => {
+        span.style.setProperty('--i', i + 1);
     });
-  </script>
+</script>
+
 </body>
 </html>
-
-
